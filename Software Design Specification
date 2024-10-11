@@ -84,4 +84,98 @@ scheduleEvent()
 When we are hosting our customers we need to make sure we have enough rooms and we need to know when they are coming. As a result we have a scheduled event operation where we can get detailed information on how the party is going to go so that we can make sure everything runs smoothly.
 bookTheaterRental()
 In the case of birthday parties we offer them the option of watching any movie that they want. As a result they have to book the whole theater since they are going to be the only people watching.
+Class:
+
+Search:
+When looking for a movie there are certain things that you can filter. This filtering will be done through our search function. You can search for a specific type of movie that you came into the site looking for or you can look for a type of movie that you want. 
+
+Attributes:
+
+searchType : String
+Finding out what kind of search you are doing. If you are looking for food or movies.
+movieType : String
+If you don’t know exactly what movie you want to watch you can use the movie type option to select a genre or mood of the movie. By entering something such as Fantasy we will show movies that are currently showing in the fantasy genre such as Harry Potter.
+Accessibility : Boolean
+For movies we will occasionally have screenings that have captions on or off. If having captions on is a necessity for you then you will have to look at the accessibility filter to see if we offer captions for the selected title.
+
+Operations:
+
+searchMovie()
+This is the actual search operation. In this our search engine will take input from the user about what movie they are looking for and display that movie alongside movies that we think they would like because they are either similar to the searched movie or movies that we think they would like
+filterBy()
+This is our filtering operation. If the user has to have subtitles on or wants to see a movie about wildlife specifically they can toggle those options on and they will be presented movies that have those features.
+nearbyTheater()
+If a user finds a movie that they want to watch with the correct filters then our system will find the closest theater that is playing that movie with the appropriate filters.
+
+
+Class:
+
+Food
+This class is for when you specifically want to buy food. It will both display the price and name of the option alongside adding the item to your cart. 
+
+Attributes:
+
+foodName: String
+Here we display the name of the food in the form of a String for the user to see
+foodPrice : Double
+Here we display the price of the food item in the form of a double for the user to see
+
+Operations:
+
+addToCart()
+If the user likes a food option then the operation will be able to take the selected quantity of the food item that the user wants and adds it into the shopping cart alongside any items the user may be purchasing
+purchase()
+In the case that the user wants to purchase they can just purchase the food item directly and receive a ticket for the food tem.
+
+
+Class
+
+Shopping Cart
+The shopping cart class is used to hold data about what the user wants to buy. If the user is considering buying items such as tickets or even food they can just add the items into the shopping cart and then checkout all at once. 
+
+Attributes:
+
+Item : List<Ticket, Food>
+This list is in place to keep track of what all is in the cart. Any ticket or food related item that the user decides they might consider buying will be added to this list to be kept track of.
+totalPrice : Double
+While the list above is in charge of keeping track of what items the user is trying to buy, this variable is just going to be the total price of all the items that the user has entered into their shopping cart.
+
+Operations:
+
+addItem()
+This operation is simply the user adding an item to their cart. The operation will take the item that the user wants, add the name and quantity to the list while adding the price into the totalPrice.
+removeItem()
+When the user decides that they many not want an item that they had previously added to the cart this operation will both remove that item from the list and deduct the price from the totalPrice
+getTotalAmount()
+This operation is just going to get the value from totalPrice and display the price to the user as that is how much money they are going to be charged if they decide to purchase everything in the cart
+
+
+Class:
+
+Ticket
+Class holding all the information for a specific ticket that a user buys. Once they buy the ticket it is going to be stored in a ticket ID so the information can be easily accessible and displayed anywhere.
+
+Attributes:
+
+ticketID : Integer
+The ticket ID is an identification number attached to a ticket to identify things such as what movie it is for and what time it is for.
+price : Double
+The price for a ticket that the customer bought
+seat : Seat
+The seat that the ticket is for
+showtime : Showtime
+Specifics about the movie like where it is being shown and a age rating for the movie
+isPrinted : Boolean
+Showing if the ticket that the customer is going to bring is digital or if it is a physical ticket
+currency : String
+The currency that is being used to buy the ticket
+
+Operations:
+
+ticketInfo()
+Sorting all the information that is important onto a either digital or physical copy of the ticket
+convertLocalCurrency()
+Converting whatever currency that the user has paid in to the currency of the local theater
+emailTicket()
+Email a copy of the ticket to the user just so that they have a backup in case anything happens
 
