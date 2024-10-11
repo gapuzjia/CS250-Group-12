@@ -179,7 +179,113 @@ Converting whatever currency that the user has paid in to the currency of the lo
 emailTicket()
 Email a copy of the ticket to the user just so that they have a backup in case anything happens
 
------------------------paste here
+printQRCode()
+Generate a qr code that can be scanned at the door as proof of ticket
+addToCart()
+Add ticket to cart so that the customer can check it out later
+
+
+
+Class:
+
+Movie
+This is the big class. This is where everything pertaining to the specific movie booth is recorded. Everything that the user would need to book their tickets and a good description of the movie viewing is going to be saved here.
+
+Attributes:
+
+movieID : Integer
+Just like above how each user has a unique userID each movie screening has a specific movieID. This ID is how we will recognize which booth we are talking about at a certain time. 
+movieTitle : String
+Just as the variable name suggests this is simply the name of the movie that is being shown
+genre : String
+What genre the movie that is being shown is
+actorList : List<String>
+The list of the actors that are present in the movie
+Runtime : Integer
+How long the movie is
+Rating : String
+The rating of the movie was given by the Motion Picture Association. Using this there will be monitors of who is buying tickets depending on their age. (M, PG13, G)
+movieFormat : String
+How the movie is being shown. Some users may prefer IMAX or 3D for certain movies over a regular movie watching experience
+Language : String
+The language that the movie is going to shown in
+captions : Boolean
+Showing to the user if the captions are going to be on or if theta are going to be off
+categories : List<String>
+This list is meant to demonstrate what types of categories the movie fits into. Since movies can often fit into multiple categories this variable has to be stored as a list
+trailer : String
+Link to the official move trailer that is going to offer a sneak peak into the movie
+seatsLeft : Integer
+Showing how many seats are left in the theater for purchase
+showTime : Integer
+The times that the movie is going to be showing at different theaters
+
+Operations:
+
+movieDetails()
+To make it easier for the user we will be bringing up all the important movie details to the user in one page
+existingShowtimes()
+In the case that a user is actually considering watching one of our movies we will find all the showtimes that have open seats and display those to the user
+seatAvailability()
+Finding out which seats are available in what movies theaters they are available
+checkAge(age)
+In the case that a movie is rated something like M where it isn’t suitable for all audiences we will display this information to inform the user
+nearestTheater()
+After you decide what kind of movie you would like to watch with all of your preferred customizations, this operation will help to find the movie theater that is closest to you.
+ 
+
+
+Class:
+
+Seat
+The seat class is used to aid the user when it comes to choosing a seat and reserving it. The user will be able to see if the seat is open or reserved and if open, they will be given the option to reserve it, but not buy it. 
+
+Attributes: 
+seatNumber: For this attribute, the seat numbers will be labeled using integers on the online ticketing system website. 
+isOpen: Boolean was utilized for this attribute so the user will be able to see whether a seat is open or not. 
+
+Operations: 
+reserveSeat(): This function will allow the user to choose what seat they want to reserve and hold that reservation until it comes to paying for the seats. The seat will be completely reserved when the user pays for the seats chosen. 
+
+
+
+
+
+Class:
+
+Screen
+The screen is just the specific movie theater booth that the movie is being shown at
+
+Attributes: 
+
+ScreenID : Integer
+The ID of the specific room that the movie is going to be shown in
+SeatCount : Integer
+This attribute will be an integer which will serve as displaying the numbers that are attached to the seats. 
+Location : String
+The road address of the location where the movie is going to be shown
+Seats : List<Integer>
+This will display a list of the seats since they are in an aisle on the screen.
+Type : String: 
+
+Operations:
+
+availableSeats(): This function will illustrate where the available seats are on the screen. There will be an indicator that will show the user whether the seat is available or vice versa. If they choose a seat that is unavailable, they will not be allowed to continue and told to choose another available seat. 
+showseatMaps(): This function will show the overall structure of the movie theater seating. It will display where the screen is located, the available seats, the unavailable seats, handicapped seats, and the seats they want to select. 
+
+
+Class:
+
+Payment Info
+The payment Information class is present so that information about the users preferred form of payment can be stored into the system. By doing this the checkout process becomes much easier and faster for both the user and the system.
+
+Attributes:
+
+paymentID : Integer
+The paymentID is just an ID that is given to every transaction that happens between the user and the system. Within the payment ID information about the transaction is going to be saved in the case of something such as a system crash, refund or fraudulent charge.
+cardNumber : Integer
+The card number that is present in the back of the card
+
 
 expiryDate : Integer
 The date that the card expires
