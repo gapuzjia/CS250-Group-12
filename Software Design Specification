@@ -179,3 +179,93 @@ Converting whatever currency that the user has paid in to the currency of the lo
 emailTicket()
 Email a copy of the ticket to the user just so that they have a backup in case anything happens
 
+-----------------------paste here
+
+expiryDate : Integer
+The date that the card expires
+CVV : Integer
+The small 3 digit code that is on the back of a credit/debit card
+paymentMethod : String
+The way that the user is going to be paying for their items. This option could be online in forms such as paypal or card or it can be in person in forms such as cash.
+cashOnline : Boolean
+If the user is buying tickets online but wants to pay in cash they would have to check this button so that the tickets are reserved for them.
+discountType : String
+In the case that the user has a discount code or something of the sort that would be entered and then the appropriate discount is given to the user
+giftCardBalance : Double
+In the case that the user has a giftcard with some leftover balance the amount is saved in the payment information area since it is a way to pay for their items
+
+Operations:
+
+processPayment()
+After taking all the information from the user the payment is then processed with an official banking system where we send the transaction ID to the bank to try and get our money.
+authorizePayment()
+In the case that the transaction is good the payment will be authorized and a message will be sent to the user that the purchase was successful
+applyDiscount()
+In the case that the user has a discount code that they want to use with payment the code is going to be processed and if it is valid a message showing it was valid and the discount amount will be shown. In the case that it isn't valid an error message will be shown to the user.
+refund()
+In the case that a user for some reason wants to cancel a ticket and get a refund then we have their saved banking information where we can easily send them their money back.
+checkGiftCardBalance()
+In the case that the user wants to either use their gift card or just check the balance we can do that for them and either apply the gift card or just show them the value.
+
+Class:
+
+Showtime
+For a specific showtime there are going to be different variables that are available. As a result by creating a class for showtime you can easily organize all the information about a specific movie screening into one class.
+
+Attributes:
+
+specificID : Integer
+The ID for showtime is the specific ID for the showing at a certain time for a certain movie. Again this ID is here just to help and organize information.
+time : Integer
+The time that the movie is going to be showing at
+seatsLeft : Integer
+How many seats are left for a specific movie showing
+screen : String
+The screen number that the movie is going to be showing at.
+ticketPrice : Double
+The ticket price for one ticket at this specific movie showtime
+
+Operations:
+
+availableSeats()
+Showing seats that are available for a specific movie showcase.
+sortByMovieTypes()
+Within a movie theater there could be multiple showings of the same movie that each have different filters for differently abled people. This is going to allow you to sort movies within a certain showtime
+ifAdultMovie()
+In the case that the movie being shown is a movie rated R or above there is going to be a warning show about the fact
+nearbyShowtimes()
+Also display showtimes for the same movie at the same time at relatively close theaters.
+
+
+Account Registration
+Customers can create accounts that will hold information about past movies and payment information. Will also be used to track available promotions.
+
+Account Management
+Users and customers can access or edit account information. Customers can change or reset passwords.
+
+Movie Viewing
+Displays all current movie titles. Customers can select a specific movie to view information about. Selecting a specific movie will display showing times.
+
+Seat Viewing and Selection
+Lets customers view available seats and select certain seats. A preview of selected seats will display as the user updates selection. Allows customer to add seats to shopping cart.
+
+Payment Page
+Customers can check out items in their shopping cart. Connects to the payment gateway and allows for checkout.
+
+Home Page
+Landing page for the movie ticketing website. Connects to Login Page and Movie Viewing.
+
+Login Page
+When the user searches up the movie ticketing site, there will be a login section that they will be able to access if they are members of the online system. They will be asked to input their username and password so they can access their information. 
+Database
+When the user logins using their username and password, the database is where all their personal information regarding their online account will be stored. This includes their username, password, past items purchased including movies and snacks, returns, number, and email. 
+
+Admin Login
+This login will differ from the user login because this one will be solely for administrators of the online ticketing system. These personnel will be capable of changing the content of the website in any type of way. 
+
+Seat Viewing and Selection
+The users will be able to see all available, unavailable, and handicapped seats. They will be able to select all types of seats, but if they are unavailable the system will not allow them to continue to purchase them. 
+
+Confirm Payment and Send Tickets
+Once the user finishes purchasing the tickets, a confirmation message will be displayed on the screen and the tickets will be sent to their email. In the email, their seats, their time of purchase, the date, the movie, and an option to cancel will be displayed. 
+
