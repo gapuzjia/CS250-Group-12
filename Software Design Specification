@@ -1,1 +1,87 @@
 Software Design Specification
+
+UML Diagram Description For Movie Ticketing System
+
+
+Class: 
+
+User Authentication 
+The class user Authentication is meant to find out who the user is. It is our login page that is going to be shown if a user is trying to buy a ticket or do anything where knowing their identity would be important to the website. 
+
+Attributes: 
+
+userName : String
+Username of the user that is saved in the system. Used for the logging in process by the user
+password : String
+Password of the user that is encrypted in our system and is entered by the user to verify that they are who they say they are
+userID : Integer
+The userID is how we actually find out who someone is. Everyone in our system is going to be given a specific number such as 4534231 which is going to be their user ID. This ID is going to be how we identify who is who
+
+Operations:
+
+login()
+This operation is just the user signing into their account if they already have one. By entering their username and password we can identify who they are and keep track of all of their purchases and other transactions using their userID.
+register()
+The register operation is made so that users not already assigned a userID by the system can create a new account and get a userID. The user would be able to choose their username and password and if they are able to complete all the steps of registration successfully then the account will be assigned a userID.
+resetPassword()
+In the case that the user forgets their password we would hate for them to have to create a whole new account. As a result we have the reset password option where they will receive an email to their registered email account or text to their phone number where they will be able to change their number.
+
+
+
+
+
+
+Class:
+
+User
+This class is the storage of user information. Here we store information that the user inputted to create their account. Alongside that we will also be storing additional information with the consent of the user. Things that will make the movie ticket buying process easier such as having 
+your credit card information or membership level will be stored in this class to make it easier to automatically fill the information later.
+
+Attributes:
+
+userID : Integer
+Again as stated above the user ID is just how we get to recognize the user. Each account is assigned a unique ID and the ID that is assigned to this account is also stated in the user tab.
+name  : String
+The user name will be defined in the User class to make it easier to verify the name of who is actually buying the movie tickets.
+email : String
+The email address of the user will be stored just so that we can send the confirmation email of a purchase to the user. Additionally if they decide to opt in we can also send promos or coupons for future purchases.
+phoneNumber : Integer
+The phone number is saved for almost the same reason as the email address. In the case that the user ends up buying a ticket we can also send them a confirmation text message to their phone if they would prefer that. The promos and coupons can also be sent to the phone instead of the email.
+paymentInfo : Payment info
+The payment information is something that we store just to make the checkout process easier for the user. By storing their payment information instead of having to deal with the hassle of something such as entering their credit card information every time they want to buy a movie ticket, they can just click once and they will have all their information filled in for them.
+membershipLVL : Integer
+Within our system we have a membership that users can either decide to opt in for or they can just buy tickets regularly. This integer that is saved in the system just shows what tier of membership they purchased so we can give them discounts and deals accordingly.
+
+Operations:
+
+viewMovies()
+This operation stands to show what movies the user has already booked tickets for. You will be able to see both past movies that the user has already seen alongside movies that the user purchases tickets for but hasn’t gone to see yet. 
+bookTickets()
+The operation just takes the user to the area where they can buy tickets for a movie through our search feature. From there they can find a movie that they would want and make the customizations that they want such as seat number before actually buying their tickets.
+cancelTickets()
+In the case that a user for some reason wants to cancel tickets we have an option where they can cancel their ticket. This would then remove the ticket from the users viewMovies() operation, give a refund to the user and open up the seats again back on  the movie search tab.
+savePaymentInfo()
+Saving the user’s payment information within their user tab. This allows them to save their method of payment to their account so that they can easily checkout. They can use various different forms of payment such as paypal or a card.
+
+
+
+
+Class:
+
+Event
+This class is meant for when there is an event that is being planned. If a birthday party or something similar is being held at our theater then there are some extra steps that we take to make the person feel more special. As a result there are some additional costs that come in to form of rentals that are also added to the subtotal.
+
+Attributes:
+
+Type : String
+When we are setting up a room for a party we want to make sure that we are setting up for the correct occasion. As a result we take in a description from the user of what their party is about so that we can better understand how to accommodate them.
+rentalCost : Double
+Since we are going above and beyond for our customers we have to charge them a little bit more due to them using a little bit more of our facilities than other people
+
+Operations:
+
+scheduleEvent()
+When we are hosting our customers we need to make sure we have enough rooms and we need to know when they are coming. As a result we have a scheduled event operation where we can get detailed information on how the party is going to go so that we can make sure everything runs smoothly.
+bookTheaterRental()
+In the case of birthday parties we offer them the option of watching any movie that they want. As a result they have to book the whole theater since they are going to be the only people watching.
+
