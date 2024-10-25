@@ -1,3 +1,12 @@
 Claudia Gonzalez: The person responsible for this role will be developing and maintaining the requirements, capabilities, and functions of the system specification. 
 JJ Ammar & Deepanshu Joshi: This team will require 2 people as they are responsible for developing and verifying the software. However, the software is not compiled or completed during this procedure. 
 Jianna Gapuz: This role is responsible for creating statistical tests to assess the software after its development. Reliability growth models may be used to regulate when reliability is acceptable. 
+
+The Testing Process
+
+The testing process is where we will be testing every single function thoroughly to see whether they work successfully. Exceptions are programmed to display when invalid information is entered. All functions will be tested, but they include payment processing, selecting seats, receiving a confirmation email, and more. The goal of the testing process is to have a 97% success rate to ensure the user has a successful experience on the online ticketing system. 
+
+Requirements traceability: Every single object and class will be tested to ensure all requirements are being met. After they are run, results will be collected to see how anything can be improved. For example, if the payment process is not working or taking too long, we would record those results and see how we can make the process more effective to satisfy the users. 
+Tested Items: The team will be testing the stages of the development such as the account registration, account management, loginpage, home page, admin login, payment processing page, and making sure all forms of display are correct.  
+Testing Schedule:  Once development is done by the development team, testing will begin and results will be recorded. 
+Test Recording Procedures:  The results will be recorded including effectiveness, time, error rate, and user satisfaction but most importantly making sure it is meeting all expectations at a reasonable time without error. 
