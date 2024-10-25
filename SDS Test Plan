@@ -10,3 +10,11 @@ Requirements traceability: Every single object and class will be tested to ensur
 Tested Items: The team will be testing the stages of the development such as the account registration, account management, loginpage, home page, admin login, payment processing page, and making sure all forms of display are correct.  
 Testing Schedule:  Once development is done by the development team, testing will begin and results will be recorded. 
 Test Recording Procedures:  The results will be recorded including effectiveness, time, error rate, and user satisfaction but most importantly making sure it is meeting all expectations at a reasonable time without error. 
+
+Hardware and Software Requirements:
+Server Requirements: High-performance server for hosting the application, ensuring smooth testing of server-side operations
+Testing Devices: Multiple devices (PCs, laptops, tablets, smartphones) to ensure compatibility across different screen sizes and operating systems.
+Network Equipment: Reliable networking equipment and stable internet connection for testing functionality dependent on network connectivity, like login and payment processing. Testing with flagged IP addresses is also a possibility using multiple routers.
+Browsers: Browser compatibility and testing making sure that it works on chrome, safari, firefox etc..
+IDEs for developing and testing code.
+Constraints: Some constraints include time, not enough people to help test, budget, and technological limitations. 
