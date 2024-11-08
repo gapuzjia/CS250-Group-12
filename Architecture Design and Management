@@ -1,3 +1,6 @@
-The database to manage information for the movie ticketing system will use SQL to support structured data. Shown in the table below are fields that specify fields of information for the database, along with mock data to show what the entries would look like.
+The database to manage information for the movie ticketing system will use SQL to support structured data. Shown in the table below are fields that specify fields of information for the database, along with mock data to show what the entries would look like.\
+
+To optimize memory taken up by the databases, the archival of inactive data on movie titles and showing information older than 2 years will be carried out. This is a long enough time period to ensure that the data is no longer needed. Customer information however, will be preserved up to 10 years before archival. The customer will be informed a week before account deletion is carried out.
+
 
 
